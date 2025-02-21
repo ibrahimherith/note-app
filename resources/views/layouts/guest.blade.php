@@ -31,12 +31,12 @@
             </div>
         </div> --}}
 
-        <section class="w-screen h-screen bg-blue-50">
+        <section class="max-w-screen h-screen bg-blue-50">
             <div class="container mx-auto h-full flex justify-center items-center">
                 <div
-                    class="w-[540px] h-fit p-4 py-10 mx-4 bg-white flex flex-col items-center rounded-lg md:p-8 md:py-12 lg:p-12 lg:mx-0"
+                    class="w-[540px] h-fit space-y-4 p-4 py-10 mx-4 text-sm bg-white flex flex-col items-center rounded-lg md:p-8 md:py-12 lg:p-12 lg:mx-0"
                 >
-                    <div class="mb-4">
+                    <div>
                         <img src="assets/images/logo.svg" alt="logo" />
                     </div>
                     {{ $slot }}

@@ -45,35 +45,36 @@
         </div>
     </form> --}}
 
-    <div class="mb-4 text-center">
+    <div class="text-center">
         <h2 class="text-2xl font-bold mb-2">Karibu Note</h2>
         <p class="text-sm">Tafadhali ingia ili kuendelea</p>
     </div>
-    <form action="{{ route('login') }}" method="POST" class="w-full mb-4">
+    <form action="{{ route('login') }}" method="POST" class="w-full space-y-4">
         @csrf
         @method('POST')
 
-        <div class="mb-4">
-          <label for="email" class="block mb-2 text-sm font-semibold"
+        <div class="space-y-1">
+          <label for="email" class="font-semibold"
             >Barua pepe</label
           >
           <input
+            id="email"
             type="email"
             name="email"
             value="{{ old('email') }}"
             placeholder="email@example.com"
-            class="block w-full p-2 shadow-sm bg-gray-50 border border-gray-300 text-sm text-gray-900 rounded-lg"
+            class="block w-full p-2 shadow-sm bg-gray-50 border border-gray-300 rounded-lg"
           />
           @error('email')
-              <span class="text-xs text-red-400">{{ $message }}</span>
+              <span class="text-red-400">{{ $message }}</span>
           @enderror
         </div>
-        <div class="mb-4">
+        <div class="space-y-1">
           <div class="flex justify-between">
-            <label for="password" class="block mb-2 text-sm font-semibold">
+            <label for="password" class="font-semibold">
               Nenosiri
             </label>
-            <a href="forget-password.html" class="text-sm">Umesahau?</a>
+            <a href="{{ route('password.request') }}">Umesahau?</a>
           </div>
 
           <div class="relative">
@@ -86,37 +87,35 @@
               />
             </div>
             <input
+              id="password"
               type="password"
               name="password"
               id="password"
-              class="block w-full p-2 shadow-sm bg-gray-50 border border-gray-300 text-sm text-gray-900 rounded-lg"
+              class="block w-full p-2 shadow-sm bg-gray-50 border border-gray-300 rounded-lg"
             />
             @error('password')
-                <span class="text-xs text-red-400">{{ $message }}</span>
+                <span class="text-red-400">{{ $message }}</span>
             @enderror
           </div>
         </div>
 
         <button
-          class="block w-full p-2 bg-blue-600 text-sm text-white font-semibold rounded-lg"
+          class="block w-full p-2 bg-blue-600 text-white font-semibold rounded-lg"
         >
           Ingia
         </button>
     </form>
     
-    {{-- <hr class="mb-4 bg-gray-200 h-1"> --}}
-    <div class="mb-4 w-full bg-gray-200 h-[1px]"></div>
+    <div class="w-full bg-gray-200 h-[1px]"></div>
     
-    <div class="mb-4 w-full">
-        <p class="mb-2 text-center text-sm">Au ingia kwa:</p>
-        <button
-          class="flex w-full items-center justify-center p-2 bg-white border border-gray-300 text-sm text-gray-900 rounded-lg"
-        >
+    <div class="space-y-2 text-center w-full">
+        <p>Au ingia kwa:</p>
+        <button class="w-full flex items-center justify-center p-2 bg-white border border-gray-300 rounded-lg">
           <img src="assets/images/icon-google.svg" alt="Google" />
           <span class="ml-2 font-semibold">Google</span>
         </button>
-    </div>
-    <div class="text-center text-sm">
-        Bado huna akaunti? <a href="{{ route('register') }}" class="font-semibold">Jisajili</a>
+        <p>
+          Bado huna akaunti? <a href="{{ route('register') }}" class="font-semibold">Jisajili</a>
+        </p>
     </div>
 </x-guest-layout>
